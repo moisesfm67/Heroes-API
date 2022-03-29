@@ -8,6 +8,7 @@
         "postinstall": "npm run test:prod",
         "test": "nyc --reporter=html mocha --timeout 20000 --exit tests/*.test.js",
         "test:prod": "cross-env NODE_ENV=prod npm run test",
+        "dev": "cross-env NODE_ENV=dev node api.js",
         "prod": "cross-env NODE_ENV=prod pm2-runtime api.js"
     },
     "keywords": [],
