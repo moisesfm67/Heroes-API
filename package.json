@@ -1,0 +1,39 @@
+{
+    "name": "07-multi-db",
+    "version": "1.0.0",
+    "description": "docker run --name postgres -e POSTGRES_USER=root -e POSTGRES_PASSWORD=123321 -e POSTGRES_DB=heroes -p 5432:5432 -d postgres",
+    "main": "index.js",
+    "scripts": {
+        "preinstall": "npm i -g pm2",
+        "postinstall": "npm run test:prod",
+        "test": "nyc --reporter=html mocha --timeout 10000 --exit tests/*.test.js",
+        "test:prod": "cross-env NODE_ENV=prod npm run test",
+        "prod": "cross-env NODE_ENV=prod pm2-runtime api.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@hapi/boom": "^9.1.4",
+        "@hapi/hapi": "^20.2.1",
+        "@hapi/inert": "^6.0.5",
+        "@hapi/vision": "^6.1.0",
+        "bcrypt": "^5.0.1",
+        "boom": "^7.3.0",
+        "cross-env": "^7.0.3",
+        "dotenv": "^16.0.0",
+        "hapi-auth-jwt2": "^10.2.0",
+        "hapi-swagger": "^14.2.5",
+        "joi": "^17.6.0",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^6.2.7",
+        "pg": "^8.7.3",
+        "pg-hstore": "^2.3.4",
+        "pm2": "^5.2.0",
+        "sequelize": "^6.17.0"
+    },
+    "devDependencies": {
+        "mocha": "^9.2.2",
+        "nyc": "^15.1.0"
+    }
+}
