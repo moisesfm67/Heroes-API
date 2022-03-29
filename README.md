@@ -65,7 +65,7 @@ after created if you want to have a dashboard for mongodb just access  [mongo-cl
 
 Connection Name: mongodb
 
-##### in the connection tab
+#### in the connection tab
 
 Host = mongodb
 
@@ -73,7 +73,7 @@ Port = 27017
 
 database name = admin
 
-##### in the authentication tab
+#### in the authentication tab
 
 authentication type = Scram-Sha-1
 
@@ -97,7 +97,7 @@ Go back to [mongo-cliente](http://localhost:3000/) and make a new connection fol
 
 Connection Name: mongodb-readWrite
 
-##### in the connection tab
+#### in the connection tab
 
 Host = mongodb
 
@@ -105,7 +105,7 @@ Port = 27017
 
 database name = heroes
 
-##### in the authentication tab
+#### in the authentication tab
 
 authentication type = Scram-Sha-1
 
