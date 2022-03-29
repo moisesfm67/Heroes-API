@@ -5,6 +5,7 @@
     "main": "api.js",
     "scripts": {
         "preinstall": "npm i -g pm2",
+        "postinstall": "npm run test:prod",
         "test": "nyc --reporter=html mocha --timeout 20000 --exit tests/*.test.js",
         "test:prod": "cross-env NODE_ENV=prod npm run test",
         "prod": "cross-env NODE_ENV=prod pm2-runtime api.js"
