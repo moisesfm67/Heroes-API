@@ -46,6 +46,17 @@ class Postgres extends ICrud {
             };
         }
 
+        console.log({
+            env: process.env.NODE_ENV,
+            JWT_SECRET: process.env.JWT_SECRET,
+            PORT: process.env.PORT,
+            SALT_PWD: process.env.SALT_PWD,
+            MONGO_DB_URL: process.env.MONGO_DB_URL,
+            POSTGRES_URL: process.env.POSTGRES_URL,
+            SSL_DB_REJECT: process.env.SSL_DB_REJECT,
+            SSL_DB: process.env.SSL_DB,
+        });
+
         const connection = new Sequelize(process.env.POSTGRES_URL, {
             quoteIdentifiers: false,
             dialectOptions,
