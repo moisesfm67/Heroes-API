@@ -41,9 +41,13 @@ docker run --name adminer -p8080:8080 --link postgres:postgres -d adminer
 After created if you want to have a dashboard for postgres just access [adminer](http://localhost:8080/) and put the following settings
 
 System = PostgreSQL
+
 server = postgres
+
 user = root
+
 password = 123321
+
 database = heroes
 
 ### Mongodb
@@ -64,7 +68,9 @@ Connection Name: mongodb
 in the connection tab
 
 Host = mongodb
+
 Port = 27017
+
 database name = admin
 
 in the authentication tab
@@ -72,7 +78,9 @@ in the authentication tab
 authentication type = Scram-Sha-1
 
 username = admin
+
 password = passwordadmin
+
 authenticationdb = admin
 
 this connection is for your admin user
@@ -92,7 +100,9 @@ Connection Name: mongodb-readWrite
 in the connection tab
 
 Host = mongodb
+
 Port = 27017
+
 database name = heroes
 
 in the authentication tab
@@ -100,7 +110,9 @@ in the authentication tab
 authentication type = Scram-Sha-1
 
 username = username that was replaced in <-ANY-USER->
+
 password = password that was replaced in <-ANY-PASSWORD->
+
 authenticationdb = heroes
 
 this connection is for your user with access only to the heroes database
