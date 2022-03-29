@@ -32,6 +32,7 @@ class MongoDB extends ICrud {
     }
 
     static connect() {
+        console.log("Connecting to MongoDB...", process.env.MONGO_DB_URL);
         Mongoose.connect(
             process.env.MONGO_DB_URL, {
                 useNewUrlParser: true,
