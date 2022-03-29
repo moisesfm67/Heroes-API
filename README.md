@@ -23,18 +23,18 @@
 
 after cloning the project, let's make the following settings
 
-#### Postgres
+### Postgres
 
 ##### Before running the following commands, make sure you have docker installed
 
 if you don't have docker, you can follow this [tutorial](https://www.youtube.com/watch?v=5nX8U8Fz5S0)
 
-##### Create of heroes database in postgres
+#### Create of heroes database in postgres
 ```bash
 docker run --name postgres -e POSTGRES_USER=root -e POSTGRES_PASSWORD=123321 -e POSTGRES_DB=heroes -p 5432:5432 -d postgres
 ```
 
-##### create the postgres administrator
+#### create the postgres administrator
 ```bash
 docker run --name adminer -p8080:8080 --link postgres:postgres -d adminer
 ```
@@ -46,13 +46,13 @@ user = root
 password = 123321
 database = heroes
 
-#### Mongodb
+### Mongodb
 
-##### Create a mongodb image and a username and password for that image
+#### Create a mongodb image and a username and password for that image
 ```bash
 docker run --name mongodb -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=senhaadmin -d mongo:4
 ```
-##### Create an administrator for mongodb
+#### Create an administrator for mongodb
 ```bash
 docker run --name mongoclient -p 3000:3000 --link mongodb:mongodb -d mongoclient/mongoclient
 ```
@@ -77,7 +77,7 @@ authenticationdb = admin
 
 this connection is for your admin user
 
-##### Create a user with access only to the heroes database
+#### Create a user with access only to the heroes database
 
 Replace <-ANY-USER-> with a name of your choice and <-ANY-PASSWORD-> with a password of your choice, this will be the username and password for your local mongodb connection
 
@@ -105,7 +105,7 @@ authenticationdb = heroes
 
 this connection is for your user with access only to the heroes database
 
-#### Environment variables
+### Environment variables
 
 before we continue, with the project open create a file with the name of ".env.dev" in the root of the project that will have the following content
 
@@ -119,20 +119,20 @@ MONGO_DB_URL=mongodb://<-USER->:<-PASSWORD->@localhost:27017/heroes
 POSTGRES_URL=postgres://root:123321@localhost/heroes
 ```
 
-##### Install dependencies
+#### Install dependencies
 
 ```bash
 npm install
 ```
 
-##### Run the tests
+#### Run the tests
 ```bash
 npm run test
 ```
 
 have to pass a total of 24 tests
 
-##### Running the project
+#### Running the project
 ```bash
 npm run dev
 ```
