@@ -40,21 +40,19 @@ docker run --name adminer -p8080:8080 --link postgres:postgres -d adminer
 ```
 After created if you want to have a dashboard for postgres just access [adminer](http://localhost:8080/) and put the following settings
 
-System = PostgreSQL
-
-server = postgres
-
-user = root
-
-password = 123321
-
-database = heroes
+|||
+| ------------- | ------------- |
+| System  | PostgreSQL  |
+| Server  | postgres  |
+| User  | root  |
+| Password  | 123321  |
+| Database  | heroes  |
 
 ### Mongodb
 
 #### Create a mongodb image and a username and password for that image
 ```bash
-docker run --name mongodb -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=senhaadmin -d mongo:4
+docker run --name mongodb -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=passwordadmin -d mongo:4
 ```
 #### Create an administrator for mongodb
 ```bash
@@ -63,25 +61,22 @@ docker run --name mongoclient -p 3000:3000 --link mongodb:mongodb -d mongoclient
 
 after created if you want to have a dashboard for mongodb just access  [mongo-cliente](http://localhost:3000/) and put the following steps
 
-Connection Name: mongodb
-
 #### in the connection tab
 
-Host = mongodb
-
-Port = 27017
-
-database name = admin
+|||
+| ------------- | ------------- |
+| Host  | mongodb  |
+| Port  | 27017  |
+| Database name  | admin  |
 
 #### in the authentication tab
 
-authentication type = Scram-Sha-1
-
-username = admin
-
-password = passwordadmin
-
-authenticationdb = admin
+|||
+| ------------- | ------------- |
+| Authentication type  | Scram-Sha-1  |
+| Username  | admin  |
+| Password  | passwordadmin  |
+| Authenticationdb  | admin  |
 
 this connection is for your admin user
 
@@ -95,25 +90,22 @@ docker exec -it mongodb mongo --host localhost -u admin -p senhaadmin -authentic
 
 Go back to [mongo-cliente](http://localhost:3000/) and make a new connection following the same steps as before but changing the following settings
 
-Connection Name: mongodb-readWrite
-
 #### in the connection tab
 
-Host = mongodb
-
-Port = 27017
-
-database name = heroes
+|||
+| ------------- | ------------- |
+| Host  | mongodb  |
+| Port  | 27017  |
+| Database name  | heroes  |
 
 #### in the authentication tab
 
-authentication type = Scram-Sha-1
-
-username = username that was replaced in <-ANY-USER->
-
-password = password that was replaced in <-ANY-PASSWORD->
-
-authenticationdb = heroes
+|||
+| ------------- | ------------- |
+| Authentication type  | Scram-Sha-1  |
+| Username  | username that was replaced in <-ANY-USER->  |
+| Password  | password that was replaced in <-ANY-PASSWORD->  |
+| Authenticationdb  | heroes  |
 
 this connection is for your user with access only to the heroes database
 
@@ -151,6 +143,6 @@ npm run dev
 
 with the project running, just access the [API documentation](localhost:5000/documentation)
 
-First, login with the username "John" and password "Moises@123"
+First, login with the username**"John"**and password**"Moises@123"**
 
 the login will generate a token and with this token you can perform the other requests.
